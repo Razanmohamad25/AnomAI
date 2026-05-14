@@ -1,6 +1,34 @@
-# AnomAI — Intelligence That Never Sleeps
+<div align="center">
+  <img src="docs/assets/logo.png" alt="AnomAI" width="600"/>
+  
+  ### Intelligence That Never Sleeps
+  
+  An AI-powered system monitoring platform that detects anomalies in real-time 
+  using an LSTM Autoencoder. Deploy a lightweight agent on any machine and 
+  monitor your entire device fleet from a central dashboard.
+</div>
 
-An AI-powered system monitoring platform that detects anomalies in real-time using an LSTM Autoencoder. Deploy a lightweight agent on any machine and monitor your entire device fleet from a central dashboard.
+---
+
+## Preview
+
+**Device Fleet** — Monitor all machines, anomaly alerts, and health status at a glance
+![Device Fleet](docs/assets/device_fleet.png)
+
+**Per-Device Dashboard** — Live CPU, Memory, Disk, and Network metrics with anomaly history
+![Dashboard](docs/assets/dashboard.png)
+
+**Offline Device State** — Auto-detected after 3 minutes without metrics
+![Offline Device](docs/assets/offline_device.png)
+
+**Resilient to Backend Outages** — Dashboard shows last known state when backend is unreachable
+![Backend Offline](docs/assets/backend_offline.png)
+
+**Auto Device Registration** — Agents register themselves; no manual setup
+![Add Device](docs/assets/add_device.png)
+
+**Daily PDF Report** — Auto-generated every 24 hours  
+📄 [View sample report](docs/assets/anomai-report.pdf)
 
 ---
 
