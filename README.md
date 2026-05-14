@@ -46,6 +46,7 @@
 - **Fleet dashboard** — monitor all devices, active alerts, and health scores from one place
 
 ---
+- **Adaptive learning** — agent automatically retrains every 30 days on freshly collected data, so the model evolves with each machine's changing usage patterns
 
 ## Architecture
 
@@ -92,6 +93,13 @@
 4. **Threshold** — set at the 98.5th percentile of validation reconstruction errors (MSE)
 5. **Inference** — at runtime, if `reconstruction_error > threshold` → anomaly flagged
 6. **Classification** — checks current values: genuinely high → `PERFORMANCE`, statistically unusual → `DEVIATION`
+7. **Adaptive retraining** — every 30 days, the agent automatically:
+   - Collects a fresh batch of normal behavior samples
+   - Retrains the LSTM Autoencoder on the updated data
+   - Recalculates the anomaly threshold from the new validation errors
+   - Hot-swaps the old model with the new one — no downtime, no manual intervention
+   
+   This prevents **model drift**: as the machine's workload patterns naturally change over weeks (new software installed, different usage hours, OS updates), the     baseline of "normal" shifts. Without retraining, the model would either flag too many false positives or miss real anomalies.
 
 ```
 Normal behavior  →  low reconstruction error  →  NORMAL
@@ -208,8 +216,21 @@ python simulate_anomaly.py
 | Performance issue | `[ANOMALY] PERFORMANCE ISSUE: CPU 94.2%` | Alert shown |
 | Device offline | — | Status → OFFLINE after 3 min |
 | Backend unreachable | `[Anomaly Buffered]` | Synced when back online |
-
+| Scheduled retrain (30d) | `[RETRAIN] Collecting new baseline... Model updated` | —           |
 ---
+## Why Adaptive Learning Matters
+
+A static anomaly detection model becomes stale fast. Real machines change:
+
+- New apps get installed → memory baseline shifts
+- Work patterns change → CPU usage at different times
+- OS updates → background process behavior changes
+- Seasonal usage → busier months vs quieter months
+
+AnomAI handles this by treating "normal" as a moving target. Every 30 days, 
+each agent independently rebuilds its understanding of its host machine. 
+This keeps the false positive rate low and detection accuracy high over months 
+of deployment, without any manual retraining or central coordination.
 
 ## Requirements
 
