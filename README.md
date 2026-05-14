@@ -1,7 +1,7 @@
 <div align="center">
   <img src="docs/assets/logo2.png" alt="AnomAI" width="600"/>
   
-  ### AnomAI Intelligence That Never Sleeps
+  ### AnomAI 
   
   An AI-powered system monitoring platform that detects anomalies in real-time 
   using an LSTM Autoencoder. Deploy a lightweight agent on any machine and 
@@ -221,4 +221,4 @@ python simulate_anomaly.py
 
 ## Author
 
-**Razan Mohammad** — [GitHub](https://github.com/Razanmohamad25)
+**Razan** — [GitHub](https://github.com/Razanmohamad25)
