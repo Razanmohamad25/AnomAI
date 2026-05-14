@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/assets/Oct 2, 2025, 03_56_13 AM.png" alt="AnomAI" width="600"/>
+  <img src="docs/assets/logo2.png" alt="AnomAI" width="600"/>
   
   ### Intelligence That Never Sleeps
   
@@ -13,22 +13,22 @@
 ## Preview
 
 **Device Fleet** — Monitor all machines, anomaly alerts, and health status at a glance
-![Device Fleet](docs/assets/device fleet2.png)
+![Device Fleet](docs/assets/device_fleet.png)
 
 **Per-Device Dashboard** — Live CPU, Memory, Disk, and Network metrics with anomaly history
-![Dashboard](docs/assets/dashboard2.png)
+![Dashboard](docs/assets/dashboard.png)
 
 **Offline Device State** — Auto-detected after 3 minutes without metrics
-![Offline Device](docs/assets/offline2.png)
+![Offline Device](docs/assets/offline_device.png)
 
 **Resilient to Backend Outages** — Dashboard shows last known state when backend is unreachable
-![Backend Offline](docs/assets/offline.png)
+![Backend Offline](docs/assets/backend_offline.png)
 
 **Auto Device Registration** — Agents register themselves; no manual setup
-![Add Device](docs/assets/Add device.png)
+![Add Device](docs/assets/add_device.png)
 
 **Daily PDF Report** — Auto-generated every 24 hours  
-📄 [View sample report](docs/assets/anomai-report(2).pdf)
+📄 [View sample report](docs/assets/anomai-report.pdf)
 
 ---
 
